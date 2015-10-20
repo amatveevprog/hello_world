@@ -1,15 +1,26 @@
-<!DOCTYPE html>
+<link rel="import" href="../cool-clock/cool-clock.html">
 
-<html>
-<head>
-  <title>hello_world_15</title>
+<polymer-element name="my-element">
 
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <template>
+    <style>    
+      #cool_clock {
+        width: 400px;
+        height: 300px;
+        left: 130px;
+        top: 120px;
+        position: absolute;
+      }
+    </style>
+    <cool-clock skin="chunkySwissOnBlack" id="cool_clock"></cool-clock>
+  </template>
 
-<body>
-  <div id="greeting">hello world!!! 15!!!!</div>
+  <script>
 
-  <script src="main.js"></script> 
-</body>
-</html>
+    Polymer({
+      
+    });
+
+  </script>
+
+</polymer-element>
