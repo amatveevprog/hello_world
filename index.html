@@ -1,4 +1,5 @@
 <link rel="import" href="../cool-clock/cool-clock.html">
+<link rel="import" href="../google-map/google-map.html">
 
 <polymer-element name="my-element">
 
@@ -11,8 +12,17 @@
         top: 120px;
         position: absolute;
       }
+      #google_map {
+        width: 400px;
+        height: 400px;
+        display: block;
+        left: 470px;
+        top: 150px;
+        position: absolute;
+      }
     </style>
     <cool-clock skin="chunkySwissOnBlack" id="cool_clock"></cool-clock>
+    <google-map latitude="37.61954334855279" longitude="-122.24363875" id="google_map"></google-map>
   </template>
 
   <script>
