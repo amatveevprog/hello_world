@@ -131,3 +131,23 @@ addEventListener("mousemove",function(event)
 		},50);
 	}
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var X = Y = 0;
+
+    function move() {
+        document.getElementById('x').style.left = X + 'px';
+        document.getElementById('x').style.top = Y + 'px';
+    }
+    document.addEventListener("mousemove", function (e) {
+        X = e.clientX;
+        Y = e.clientY;
+    }, false);
+
+    setInterval(move, 100);
+});
+
