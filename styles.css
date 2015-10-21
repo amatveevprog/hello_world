@@ -368,5 +368,36 @@
   clear: none;
   opacity:0.5;
 }
+
+
+.teabar-circles
+ {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding-left:10%;
+     padding-right:10%;
+
+ }
+
+.teabar-circle
+ {
+
+    position: relative;
+    background: #f0f0f0; 
+    display: inline-block;
+    border-radius:999px;
+    height:200px;
+    float: left;
+
+    margin:10px;
+ }
+
+.teabar-circle-img
+{
+  display: inline-block;
+}
+
+
 @media (max-width: 991px) {
 }
