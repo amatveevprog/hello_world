@@ -417,6 +417,7 @@
 	width:50px;
 	border-radius:3px;
 	background:url(http://culture-club.ru/teatime/images/Kitchen%20Teapot.ico);
+	cursor:url(http://culture-club.ru/teatime/images/Kitchen%20Teapot.ico) 16 16,move;
 }
 
 #x {
