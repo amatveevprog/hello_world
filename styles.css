@@ -410,6 +410,14 @@
 	-webkit-border-radius: 55px;
 	border-radius: 55px;
 }
+.trail
+{
+	position:absolute;
+	height:50px;
+	width:50px;
+	border-radius:3px;
+	background:url(http://culture-club.ru/teatime/images/Kitchen%20Teapot.ico);
+}
 
 @media (max-width: 991px) {
 }
