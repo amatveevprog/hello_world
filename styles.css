@@ -17,7 +17,7 @@
   position: static;
   display: block;
   height: 613px;
-  background-image: url('images/shapka (1).png');
+  background-image: url('http://culture-club.ru/teatime/images/shapka%20(1).png');
   background-position: 0px 0px;
   background-size: cover;
 }
@@ -376,7 +376,7 @@
     display: inline-block;
     text-align: center;
     padding-left:10%;
-     padding-right:10%;
+    padding-right:10%;
 
  }
 
@@ -387,9 +387,8 @@
     background: #f0f0f0; 
     display: inline-block;
     border-radius:999px;
-    height:200px;
+    height:320px
     float: left;
-
     margin:10px;
  }
 
