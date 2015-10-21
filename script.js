@@ -151,3 +151,22 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(move, 100);
 });
 
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var X = Y = 1;
+    
+    function move() {
+        document.getElementById('x').style.left = X + 'px';
+        document.getElementById('x').style.top = Y + 'px';
+        TweenLite.to(document.getElementById('x'), 0.5, {transform:'rotate('+ X + Y*5 +'deg)'}); 
+    }
+    document.addEventListener("mousemove", function (e) {
+        X = e.clientX;
+        Y = e.clientY;
+    }, false);
+
+    setInterval(move, 100);
+});
+
