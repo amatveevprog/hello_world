@@ -95,39 +95,4 @@ $(document).ready(function(){
     });
 });
 
-var dotsArray = [];
-for(var i=0;i<5;i++)
-{
-	var newDiv = document.createElement("img");
-	newDiv.className="trail";
-	newDiv.src="http://culture-club.ru/teatime/images/Kitchen%20Teapot.ico";
-	document.body.appendChild(newDiv);
-	dotsArray.push(newDiv);
-}
-var changeCoords=function(event)
-{
-	//меняем координаты точек последовательно
-	for(var i=dotsArray.length-1;i>0;i--)
-	{
-		dotsArray[i].style.top=dotsArray[i-1].style.top;
-		dotsArray[i].style.left=dotsArray[i-1].style.left;
-	}
-	dotsArray[0].style.top=event.pageY;
-	dotsArray[0].style.left=event.pageX;
-}
-var scheduled=false;
-var lastEvent;
-addEventListener("mousemove",function(event)
-{
-	lastEvent=event;
-	if(scheduled==false)
-	{
-		scheduled=true;
-		setTimeout(function()
-		{
-			scheduled=false;
-			changeCoords(lastEvent);
-			
-		},50);
-	}
-});
+
