@@ -384,7 +384,7 @@
  {
 
     position: relative;
-    background: #f0f0f0; 
+    //background: #f0f0f0; 
     display: inline-block;
     border-radius:999px;
     height:320px
@@ -400,16 +400,9 @@
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
+	box-shadow:3px 4px 5px 6px #000;
 }
-.teabar-circle-img:hover
-{
-  width: 110px;
-	height: 110px;
-	background: green;
-	-moz-border-radius: 55px;
-	-webkit-border-radius: 55px;
-	border-radius: 55px;
-}
+
 .trail
 {
 	position:absolute;
