@@ -103,12 +103,12 @@ for(var k=0;k<thisCircles.length;k++)
       //console.log(thisCircles[i]);
       var elem=thisCircles[k];
       thisCircles[k].addEventListener("mouseenter",function(event){
-        TweenLite.to(event.target,0.5,{width:'320px',height:'120px',borderRadius:'10px'});
-        TweenMax.to(event.target,0.5,{boxShadow:'2px 2px 2px 2px #001'});
+        TweenLite.to(event.target,0.5,{width:'280px',height:'280px',borderRadius:'999px', opacity:1});
+        TweenMax.to(event.target,0.5,{boxShadow:'6px 6px 9px 1px #001'});
       });
       thisCircles[k].addEventListener("mouseleave",function(event){
-        TweenLite.to(event.target,1,{width:'250px',height:'100px',borderRadius:'10px'});
-        TweenMax.to(event.target,1,{boxShadow:'2px 2px 2px 2px #000'});
+        TweenLite.to(event.target,1,{width:'250px',height:'250px',borderRadius:'999px',opacity:0.8});
+        TweenMax.to(event.target,1,{boxShadow:'1px 1px 1px 1px #000'});
       });
       //TweenLite.to(thisCircles[i],1,{width:'200%',background:'red',transform:'rotate(30deg)'});
     }
