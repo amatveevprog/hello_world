@@ -394,13 +394,13 @@
 
 .teabar-circle-img
 {
-  width: 100px;
-	height: 100px;
+  width: 250px;
+	height: 250px;
 	background: red;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-	box-shadow:3px 4px 5px 6px #000;
+	box-shadow:1px 1px 1px 1px #000;
 }
 
 .trail
