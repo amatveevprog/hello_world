@@ -96,3 +96,21 @@ $(document).ready(function(){
 });
 
 
+  
+var thisCircles = document.getElementsByClassName("teabar-circle-img");
+for(var k=0;k<thisCircles.length;k++)
+    {
+      //console.log(thisCircles[i]);
+      var elem=thisCircles[k];
+      thisCircles[k].addEventListener("mouseenter",function(event){
+        TweenLite.to(event.target,0.5,{width:'120px',height:'120px',borderRadius:'60px'});
+        TweenMax.to(event.target,0.5,{boxShadow:'3px 4px 5px 6px #029'});
+      });
+      thisCircles[k].addEventListener("mouseleave",function(event){
+        TweenLite.to(event.target,1,{width:'100px',height:'100px',borderRadius:'50px'});
+        TweenMax.to(event.target,1,{boxShadow:'3px 4px 5px 6px #000'});
+      });
+      //TweenLite.to(thisCircles[i],1,{width:'200%',background:'red',transform:'rotate(30deg)'});
+    }
+
+
