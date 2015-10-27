@@ -19,7 +19,7 @@ $("#mitem1").on({
     mouseleave: function () {
         //stuff to do on mouse leave
         var pot = document.getElementById("pot1");
-        TweenLite.to(pot, 1, {opacity:0, transform:'rotate(0deg)'});
+        TweenLite.to(pot, 1, {opacity:0 , transform:'rotate(0deg)'});
         
          var dv = document.getElementById("mitem1");
         TweenLite.to(dv, 0.5, {background:'rgba(255, 255, 0, 0);', width:'100%'});
