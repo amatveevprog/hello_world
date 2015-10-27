@@ -1,0 +1,69 @@
+.cartdiv
+ {
+     background: -webkit-linear-gradient(left, #FFDC00, #FFDC20  );
+     position:absolute;
+     top:0;
+     bottom:0;
+     height:100%;
+     right:0;
+     width:0%;
+     overflow:hidden;
+     opacity:0;
+     -webkit-transition:width .05s linear;
+     transition:width .05s linear;
+     -webkit-transform:translateZ(0) scale(1,1);
+     z-index:1000;
+ }
+ 
+ .carticon
+  {
+    margin-top:10px;
+    margin-left:5px;
+    width:40px;
+    position:relative;
+
+  }
+  
+   .elemicon
+  {
+    margin-top:10px;
+    margin-left:6px;
+    width:20px;
+    position:relative;
+    opacity:0;
+    float: left;
+    
+
+  }
+  
+  .cartelemdiv
+  {
+     width:40px;
+     height:40px;
+     position:relative;
+     margin-top:10px;
+     margin-left:5px;
+
+  }
+
+.icondiv
+{
+  width:40px;
+  height:50px;
+
+}
+
+
+.elem_div_open
+{
+   background: -webkit-linear-gradient(left, #FF851B, #FF853B);
+   float: left;
+   display:none;
+   opacity:0;
+}
+
+.elemtext
+{
+  float: left;
+}
+
