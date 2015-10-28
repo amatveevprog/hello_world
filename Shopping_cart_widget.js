@@ -28,7 +28,7 @@ function Shopping_Cart()
       if(document.body != null)
          {
             document.body.appendChild(cart); 
-            TweenLite.to(cart, 1, {opacity:1, width:'50px'});
+            TweenLite.to(cart, 2, {opacity:1, width:'50px'});
             var icon_div = document.createElement("div");
             icon_div.id = 'icondiv';
             icon_div.className = 'icondiv';
@@ -38,45 +38,69 @@ function Shopping_Cart()
             cart_icon.className = 'carticon';
             icon_div.appendChild(cart_icon);
             cart.appendChild(icon_div);
-            var hr = document.createElement("hr");
-            cart.appendChild(hr);
+            var hr = document.createElement("div");
+            hr.className = 'delimeter';
+            
+            
+            
+             cart.appendChild(hr);
             
             cart.addEventListener("mouseenter",function(event)
                   {
                     
                      TweenLite.to(cart_icon, 0.3, {transform:'rotate(90deg)'});
-                     TweenLite.to(cart, 1, {width:'120px'});
-                     var blocks = document.getElementsByClassName('elem_div_open');
-                     console.log(blocks);
-                     for (var i in blocks)
+                     TweenLite.to(cart, 2, {width:'200px',onComplete:showdiv});
+                     
+                     
+                    function showdiv()
                       {
-                        TweenLite.to(blocks[i], 0.5, {opacity:1,onUpdate:show()});
-                        function show()
-                         {
-                           //blocks[i].style.display = 'inline';
-                         }
-                      }
+                          var blocks = document.getElementsByClassName('elem_div_open');
+                          console.log(blocks);
+                          
+                           for (var i in blocks)
+                            {
+                        
+                              console.log('!a'+i + blocks[i].style.display);
+                              blocks[i].style.display = 'inline';
+                              //locks[i].style.visibility = 'inline';
+                             
+                                  TweenLite.to(blocks[i], 0.5, {width: '120px'});
+        
+                               
+  
+                            }
+                
+                      }  
+                      
+                      
+                     
+                      
+                      
+                      
+                      
                      //TweenLite.to(cart_icon, 1, {background:'#FF851B'});
                    
                   });
                   
             cart.addEventListener("mouseleave",function(event)
                   {
+                   
+                            
+                            
+                           
+                            
                      TweenLite.to(cart, 1, {width:'50px'});
                      TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)'});
                      
-                 var blocks = document.getElementsByClassName('elem_div_open');
-                     console.log(blocks);
-                     for (var i in blocks)
-                      {
-                        
-                        TweenLite.to(blocks[i], 0.5, {opacity:0, onUpdate:hide()});
-                        function hide()
-                         {
-                           //blocks[i].style.display = 'none';
-                         }
-                      }
-                
+                  var blocks = document.getElementsByClassName('elem_div_open');
+                          console.log(blocks);
+                           for (var i in blocks)
+                            {
+
+                              blocks[i].style.width='0px';
+                              blocks[i].style.display = 'none';
+  
+                            }
                       
                       
                   });
@@ -126,6 +150,7 @@ function Shopping_Cart()
     
     
 }
+
 
 
 
