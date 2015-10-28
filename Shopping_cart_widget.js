@@ -48,34 +48,45 @@ function Shopping_Cart()
             cart.addEventListener("mouseenter",function(event)
                   {
                     
-                     TweenLite.to(cart_icon, 0.3, {transform:'rotate(90deg)'});
-                     TweenLite.to(cart, 2, {width:'200px',onComplete:showdiv});
+                    
+                     var a = TweenLite.to(cart, 1.5,{width:'200px',onStart:showdiv});
                      
                      
                     function showdiv()
                       {
-                          var blocks = document.getElementsByClassName('elem_div_open');
+                          var b =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(90deg)'});
+                          var blocks = document.getElementsByClassName('cartelemdiv');
                           console.log(blocks);
                           
+                          
                            for (var i in blocks)
-                            {
-                        
-                              console.log('!a'+i + blocks[i].style.display);
-                              blocks[i].style.display = 'inline';
-                              //locks[i].style.visibility = 'inline';
-                             
-                                  TweenLite.to(blocks[i], 0.5, {width: '120px'});
-        
-                               
-  
+                            {       
+                                  blocks[i].style.background = '#FF851B';
+                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'14px',paddingBottom:'6px',onComplete:ShowContent});
+                                  
+
                             }
+                            
+                            
                 
                       }  
                       
-                      
+                      //ShowContent();
                      
                       
-                      
+                      // Show Content
+                      function ShowContent()
+                       {
+                          var blocks_right = document.getElementsByClassName('elem_div_right');
+                          console.log(blocks_right);
+                           for (var i in blocks_right)
+                            {     console.log(blocks_right[i].style.display);
+                                  blocks_right[i].style.display = 'inline';
+                                 // var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'14px',paddingBottom:'6px',onComplete:ShowContent});
+                                  
+
+                            }
+                       }
                       
                       
                      //TweenLite.to(cart_icon, 1, {background:'#FF851B'});
@@ -85,22 +96,53 @@ function Shopping_Cart()
             cart.addEventListener("mouseleave",function(event)
                   {
                    
-                            
-                            
-                           
-                            
-                     TweenLite.to(cart, 1, {width:'50px'});
-                     TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)'});
+                       
+                     var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)'()});
+                  hideelems();
+                     function hidecart()
+                     {
+                      var a1 =  TweenLite.to(cart, 1, {width:'50px',onStart: HideContent});
+                     }
                      
-                  var blocks = document.getElementsByClassName('elem_div_open');
+                     
+                     function hideelems()
+                     {
+                     var blocks = document.getElementsByClassName('cartelemdiv');
                           console.log(blocks);
                            for (var i in blocks)
                             {
+                               var a3 =  TweenLite.to(blocks[i], 0.3, {paddingBottom:'0px',paddingTop:'0px'});
 
-                              blocks[i].style.width='0px';
-                              blocks[i].style.display = 'none';
+                              blocks[i].style.background= '#FFDC00';
+                              blocks[i].style.width = '0px';
   
                             }
+                     }
+                     
+                    
+                     
+                    
+                       var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)',onStart:hidecart});
+                     function hidecart()
+                     {
+                      var a1 =  TweenLite.to(cart, 1, {width:'50px'});
+                     }
+                       
+                     function HideContent()
+                       {
+                          var blocks_right = document.getElementsByClassName('elem_div_right');
+                          console.log(blocks_right);
+                           for (var i in blocks_right)
+                            {     console.log(blocks_right[i].style.display);
+                                  blocks_right[i].style.display = 'none';
+                                 // var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'14px',paddingBottom:'6px',onComplete:ShowContent});
+                                  
+
+                            }
+                       }
+                      
+                      
+                      
                       
                       
                   });
@@ -122,6 +164,14 @@ function Shopping_Cart()
      {
        goods.push(item);
        console.log(goods);
+       
+       
+        var cart_elem_title = document.createElement("p");
+        cart_elem_title.innerHTML = item.name;
+        cart_elem_title.className = 'elemtext';
+       
+       
+       
        var cart_elem_div = document.createElement("div");
        cart_elem_div.id = item.id;
        cart_elem_div.name = item.name;
@@ -133,16 +183,32 @@ function Shopping_Cart()
        cart_elem_div.appendChild(cart_elem_icon);
        
        
-        var cart_elem_div1 = document.createElement("div");
-        cart_elem_div1.className = 'elem_div_open';
+        var cart_elem_div_right = document.createElement("div");
+        cart_elem_div_right.id = item.id+'divright';
+        cart_elem_div.name = item.name+'rightdiv';
+        cart_elem_div_right.className = 'elem_div_right';
         
-        var cart_elem_title = document.createElement("p");
-        cart_elem_title.innerHTML = item.name;
-        cart_elem_title.className = 'elemtext';
-        cart_elem_div1.appendChild(cart_elem_title);
         
+        var cart_elem_div_up = document.createElement("div");
+        cart_elem_div_up.className = 'elem_div_up';
+        
+        
+        cart_elem_div_up.appendChild(cart_elem_title);
+        
+        var cart_elem_div_down = document.createElement("div");
+        cart_elem_div_down.className = 'elem_div_down';
+        
+        
+        cart_elem_div_right.appendChild( cart_elem_div_up);
+        cart_elem_div_right.appendChild( cart_elem_div_down);
+        
+        
+       
+       cart_elem_div.appendChild(cart_elem_div_right);
        cart.appendChild(cart_elem_div);
-       cart.appendChild(cart_elem_div1);
+       
+
+       //cart.appendChild(cart_elem_div1);
        TweenLite.to(cart_elem_icon, 0.5, {opacity:1, width:'30px'});
      }
     
