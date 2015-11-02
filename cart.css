@@ -6,7 +6,7 @@
 
 .cartdiv
  {   scrollbar-track-color:yellow;
-     background: -webkit-linear-gradient(left, #FFDC00, #FFDC20  );
+     background: -webkit-linear-gradient(left, #FFDC00, #FFDC20);
      position:absolute;
      top:0;
      bottom:0;
@@ -117,6 +117,30 @@
   float:left;
 }
 
+
+.carttitleQuantity
+{
+  
+  text-align: left;
+  margin:0px;
+  padding:0px;
+  float:left;
+    font-size:15px;
+}
+
+
+
+.carttitlePrice
+{
+  
+  text-align: left;
+  margin:0px;
+  padding:0px;
+  float:left;
+    font-size:23px;
+}
+
+
 .plusbutton
 {
   display: inline-block;
@@ -146,10 +170,26 @@
 
 
 
+.deleteitem
+{
+  margin-top:-45px;
+  margin-right:-13px;
+  width:25px;
+  height:25px;
+  float:right;
+  background: red;
+  border-radius:99px;
+  border:5px;
+  border-color:#FFDC00;
+  
+}
 
 
-
-
+.deleteitem:hover
+{
+    opacity: 0.4;
+    transition: .2s ease;
+}
 
 
 

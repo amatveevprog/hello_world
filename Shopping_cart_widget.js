@@ -199,9 +199,10 @@ function Shopping_Cart()
         item_name.className = 'carttitle';
         cart_elem_div_right_up.appendChild(item_name);
         
-        
-      
-       
+         var delete_item = document.createElement("button");
+         delete_item.className = 'deleteitem';
+         delete_item.innerText = 'x';
+          cart_elem_div_right_up.appendChild(delete_item);
        
         var item_Number = document.createElement("p");
         item_Number.innerHTML = ' 5 ';
