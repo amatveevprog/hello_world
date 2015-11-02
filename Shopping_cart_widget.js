@@ -62,7 +62,7 @@ function Shopping_Cart()
                            for (var i in blocks)
                             {       
                                   blocks[i].style.background = '#FF851B';
-                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'14px',paddingBottom:'6px',onComplete:ShowContent});
+                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'14px',paddingBottom:'6px'});
                                   
 
                             }
@@ -75,19 +75,7 @@ function Shopping_Cart()
                      
                       
                       // Show Content
-                      function ShowContent()
-                       {
-                          var blocks_right = document.getElementsByClassName('elem_div_right');
-                          console.log(blocks_right);
-                           for (var i in blocks_right)
-                            {     console.log(blocks_right[i].style.display);
-                                  blocks_right[i].style.display = 'inline';
-                                 // var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'14px',paddingBottom:'6px',onComplete:ShowContent});
-                                  
-
-                            }
-                       }
-                      
+                  
                       
                      //TweenLite.to(cart_icon, 1, {background:'#FF851B'});
                    
@@ -97,21 +85,18 @@ function Shopping_Cart()
                   {
                    
                        
-                     var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)'()});
-                  hideelems();
-                     function hidecart()
-                     {
-                      var a1 =  TweenLite.to(cart, 1, {width:'50px',onStart: HideContent});
-                     }
+                     var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)'});
+                    
+                
                      
-                     
+                        hideelems();
                      function hideelems()
                      {
                      var blocks = document.getElementsByClassName('cartelemdiv');
                           console.log(blocks);
                            for (var i in blocks)
                             {
-                               var a3 =  TweenLite.to(blocks[i], 0.3, {paddingBottom:'0px',paddingTop:'0px'});
+                               var a3 =  TweenLite.to(blocks[i], 0.3, {paddingBottom:'0px',paddingTop:'0px',onComplete:hidecart});
 
                               blocks[i].style.background= '#FFDC00';
                               blocks[i].style.width = '0px';
@@ -122,24 +107,14 @@ function Shopping_Cart()
                     
                      
                     
-                       var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)',onStart:hidecart});
+                      var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)'});
+                      
                      function hidecart()
                      {
                       var a1 =  TweenLite.to(cart, 1, {width:'50px'});
                      }
                        
-                     function HideContent()
-                       {
-                          var blocks_right = document.getElementsByClassName('elem_div_right');
-                          console.log(blocks_right);
-                           for (var i in blocks_right)
-                            {     console.log(blocks_right[i].style.display);
-                                  blocks_right[i].style.display = 'none';
-                                 // var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'14px',paddingBottom:'6px',onComplete:ShowContent});
-                                  
-
-                            }
-                       }
+                     
                       
                       
                       
@@ -182,29 +157,6 @@ function Shopping_Cart()
        cart_elem_icon.src = teaimagesrc;
        cart_elem_div.appendChild(cart_elem_icon);
        
-       
-        var cart_elem_div_right = document.createElement("div");
-        cart_elem_div_right.id = item.id+'divright';
-        cart_elem_div.name = item.name+'rightdiv';
-        cart_elem_div_right.className = 'elem_div_right';
-        
-        
-        var cart_elem_div_up = document.createElement("div");
-        cart_elem_div_up.className = 'elem_div_up';
-        
-        
-        cart_elem_div_up.appendChild(cart_elem_title);
-        
-        var cart_elem_div_down = document.createElement("div");
-        cart_elem_div_down.className = 'elem_div_down';
-        
-        
-        cart_elem_div_right.appendChild( cart_elem_div_up);
-        cart_elem_div_right.appendChild( cart_elem_div_down);
-        
-        
-       
-       cart_elem_div.appendChild(cart_elem_div_right);
        cart.appendChild(cart_elem_div);
        
 
