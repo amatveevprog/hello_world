@@ -18,16 +18,19 @@ function showwidgetcontent()
     var blocks = document.getElementsByClassName('cartelemdivright');
     for (var i in blocks)
       {       
-          blocks[i].style.display = 'inline';
+          var tween = TweenLite.to(blocks[i], 0.5,{opacity:1, display:'inline'});
+          //blocks[i].style.display = 'inline';
       }
  }
 
 function hidewidgetcontent()
  {
     var blocks = document.getElementsByClassName('cartelemdivright');
+    
     for (var i in blocks)
-      {       
-          blocks[i].style.display= 'none';
+      {   
+          var tween = TweenLite.to(blocks[i], 0.2,{opacity:0,display:'none'});
+          //blocks[i].style.display= 'none';
       }
  }
 
@@ -70,7 +73,7 @@ function Shopping_Cart()
                   {
                     //hidewidgetcontent();
                     
-                     var a = TweenLite.to(cart, 1.5,{width:'200px',onStart:showdiv, onComplete:showwidgetcontent});
+                     var a = TweenLite.to(cart, 1.5,{width:'215px',onStart:showdiv, onComplete:showwidgetcontent});
                      
                      
                     function showdiv()
@@ -83,7 +86,7 @@ function Shopping_Cart()
                            for (var i in blocks)
                             {       
                                   blocks[i].style.background = '#FF851B';
-                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'25px',paddingBottom:'16px'});
+                                  var c = TweenLite.to(blocks[i], 0.5, {width: '207px',paddingTop:'25px',paddingBottom:'16px'});
                             }
                             
                           
@@ -111,11 +114,11 @@ function Shopping_Cart()
                      var blocks = document.getElementsByClassName('cartelemdiv');
                           console.log(blocks);
                            for (var i in blocks)
-                            {
-                               var a3 =  TweenLite.to(blocks[i], 0.3, {paddingBottom:'0px',paddingTop:'0px',onStart:hidewidgetcontent, onComplete:hidecart});
+                            { 
+                               var a3 =  TweenLite.to(blocks[i], 0.6, {paddingBottom:'0px',paddingTop:'0px',background:'#FFDC00',onStart:hidewidgetcontent,width:'0px', onComplete:hidecart});
 
-                              blocks[i].style.background= '#FFDC00';
-                              blocks[i].style.width = '0px';
+                              //blocks[i].style.background= '#FFDC00';
+                             // blocks[i].style.width = '0px';
   
                             }
                      }

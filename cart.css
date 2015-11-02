@@ -1,5 +1,11 @@
+
+
+
+
+
+
 .cartdiv
- {
+ {   scrollbar-track-color:yellow;
      background: -webkit-linear-gradient(left, #FFDC00, #FFDC20  );
      position:absolute;
      top:0;
@@ -7,12 +13,13 @@
      height:100%;
      right:0;
      width:0%;
-     overflow:hidden;
+     
      opacity:0;
      -webkit-transition:width .05s linear;
      transition:width .05s linear;
      -webkit-transform:translateZ(0) scale(1,1);
      z-index:1000;
+     overflow:hidden;
  }
  
  .carticon
