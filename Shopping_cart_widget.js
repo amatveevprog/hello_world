@@ -85,8 +85,8 @@ function Shopping_Cart()
                           
                            for (var i in blocks)
                             {       
-                                  blocks[i].style.background = '#F7DD72';
-                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'25px',paddingBottom:'16px'});
+                                  blocks[i].style.background = '#EEF5DB';
+                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'25px',paddingBottom:'13px'});
                             }
                             
                           
@@ -104,7 +104,7 @@ function Shopping_Cart()
                   
             cart.addEventListener("mouseleave",function(event)
                   {
-                     var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)',onStart:hideelems});
+                     var a2 =  TweenLite.to(cart_icon, 0.5 , {transform:'rotate(0deg)',onStart:hideelems});
                     
                 
                      
@@ -115,7 +115,7 @@ function Shopping_Cart()
                           console.log(blocks);
                            for (var i in blocks)
                             { 
-                               var a3 =  TweenLite.to(blocks[i], 0.6, {paddingBottom:'0px',paddingTop:'0px',background:'#648381',onStart:hidewidgetcontent,width:'0px', onComplete:hidecart});
+                               var a3 =  TweenLite.to(blocks[i], 0.3, {paddingBottom:'0px',paddingTop:'0px',background:'#EEF5DB',onStart:hidewidgetcontent,width:'0px', onComplete:hidecart});
 
                               //blocks[i].style.background= '#FFDC00';
                              // blocks[i].style.width = '0px';
