@@ -73,7 +73,7 @@ function Shopping_Cart()
                   {
                     //hidewidgetcontent();
                     
-                     var a = TweenLite.to(cart, 1.5,{width:'215px',onStart:showdiv, onComplete:showwidgetcontent});
+                     var a = TweenLite.to(cart, 1.5,{width:'213px', paddingLeft:'7px',boxShadow: '0 0 4px rgba(0,0,0,0.2)',onStart:showdiv, onComplete:showwidgetcontent});
                      
                      
                     function showdiv()
@@ -85,8 +85,8 @@ function Shopping_Cart()
                           
                            for (var i in blocks)
                             {       
-                                  blocks[i].style.background = '#FF851B';
-                                  var c = TweenLite.to(blocks[i], 0.5, {width: '207px',paddingTop:'25px',paddingBottom:'16px'});
+                                  blocks[i].style.background = '#F7DD72';
+                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'25px',paddingBottom:'16px'});
                             }
                             
                           
@@ -115,7 +115,7 @@ function Shopping_Cart()
                           console.log(blocks);
                            for (var i in blocks)
                             { 
-                               var a3 =  TweenLite.to(blocks[i], 0.6, {paddingBottom:'0px',paddingTop:'0px',background:'#FFDC00',onStart:hidewidgetcontent,width:'0px', onComplete:hidecart});
+                               var a3 =  TweenLite.to(blocks[i], 0.6, {paddingBottom:'0px',paddingTop:'0px',background:'#648381',onStart:hidewidgetcontent,width:'0px', onComplete:hidecart});
 
                               //blocks[i].style.background= '#FFDC00';
                              // blocks[i].style.width = '0px';

@@ -6,14 +6,14 @@
 
 .cartdiv
  {   scrollbar-track-color:yellow;
-     background: -webkit-linear-gradient(left, #FFDC00, #FFDC20);
+     background-image: url(http://cs623223.vk.me/v623223802/46a60/B-klt2Ocxyo.jpg);
      position:absolute;
      top:0;
      bottom:0;
      height:100%;
      right:0;
      width:0%;
-     
+  
      opacity:0;
      -webkit-transition:width .05s linear;
      transition:width .05s linear;
@@ -44,19 +44,25 @@
   
   .cartelemdiv
   {
-     width:40px;
+     color: #171123;
+     border-radius:2px;
+     width:50px;
      height:40px;
-     margin-top:2px;
-     padding-left:4px;
-     padding-bottom:1px;
-
+     margin-top:5px;
+     padding-left:5px;
+     padding-bottom:3px;
+     background:#648381; /* Параметры тени */
   }
   
   
   .cartelemdiv:hover
   {
-    opacity: 0.4;
-    transition: .2s ease;
+ 
+    background:#88D498;
+    border:5px;
+    transition: 0.8s ease;
+    
+
 
   }  
 
@@ -158,7 +164,7 @@
   width:22px;
   font-size:17px;
   height:22px;
-  background-color:#F07444;
+  background-color:#A0CED9;
 }
 
 .plusbutton:hover 
@@ -180,15 +186,15 @@
 
 .deleteitem
 {
-  margin-top:-45px;
-  margin-right:-13px;
+  margin-top:-39px;
+  margin-right:-9px;
   width:25px;
   height:25px;
   float:right;
-  background: red;
-  border-radius:99px;
+  border-bottom-left-radius: 1em 3em;
+  background: #88D498;
   border:5px;
-  border-color:#FFDC00;
+  border-color:#5B85AA;
   
 }
 
