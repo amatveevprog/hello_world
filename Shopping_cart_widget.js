@@ -190,8 +190,20 @@ function Shopping_Cart()
        var cart_elem_div_right_down = document.createElement("div");
        cart_elem_div_right_down.className = 'cartelemdivright_down';
        
+          // _______________________________________TEXT BLOCKS________________________________________
+        var item_name = document.createElement("p");
+        item_name.innerHTML = item.name;
+        item_name.className = 'carttitle';
+        cart_elem_div_right_up.appendChild(item_name);
+        
+        
+      
        
        
+        var item_Price = document.createElement("p");
+        item_Price.innerHTML = ' 5  <>  987 RUB';
+        item_Price.className = 'carttitle';
+        cart_elem_div_right_down.appendChild(item_Price);
        
        
        cart_elem_div_right.appendChild(cart_elem_div_right_up);
@@ -245,6 +257,6 @@ function additem()
     i = i+1;
     var item = new Object();
     item.id = i+'a';
-    item.name = 'tea '+i;
+    item.name = 'Чай Син Лин Хао Фен Ши  '+i;
     cart.add_item(item);
  }
