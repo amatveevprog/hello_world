@@ -203,10 +203,44 @@ function Shopping_Cart()
       
        
        
-        var item_Price = document.createElement("p");
-        item_Price.innerHTML = ' 5  <>  987 RUB';
+        var item_Number = document.createElement("p");
+        item_Number.innerHTML = ' 5 ';
+        item_Number.className = 'carttitle';
+        cart_elem_div_right_down.appendChild(item_Number);
+        
+       
+       
+       
+        var addbutton = document.createElement("button");
+        addbutton.innerText = '+';
+        addbutton.className = 'plusbutton';
+       
+        var minusbutton = document.createElement("button");
+        minusbutton.innerText = '-';
+        minusbutton.className = 'plusbutton';
+        
+        
+        
+        
+       
+        var cart_elem_div_buttons = document.createElement("div");
+        cart_elem_div_buttons.className = 'plusminusbtns';
+        
+       
+        cart_elem_div_buttons.appendChild(minusbutton);
+         cart_elem_div_buttons.appendChild(addbutton);
+         
+        
+          cart_elem_div_right_down.appendChild(cart_elem_div_buttons);
+        
+        
+        var item_Price= document.createElement("p");
+        item_Price.innerHTML = ' 676 RUB';
         item_Price.className = 'carttitle';
         cart_elem_div_right_down.appendChild(item_Price);
+       
+       
+       
        
        
        cart_elem_div_right.appendChild(cart_elem_div_right_up);
