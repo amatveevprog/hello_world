@@ -51,6 +51,14 @@
      padding-bottom:1px;
 
   }
+  
+  
+  .cartelemdiv:hover
+  {
+    opacity: 0.4;
+    transition: .2s ease;
+
+  }  
 
 .icondiv
 {
@@ -187,6 +195,7 @@
 
 .deleteitem:hover
 {
+  
     opacity: 0.4;
     transition: .2s ease;
 }
