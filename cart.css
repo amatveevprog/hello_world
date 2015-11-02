@@ -68,7 +68,7 @@
 
 .elem_div_right
 {
-    margin-left:7px;
+    margin-left:3px;
     background: white;
     display:none;
     opacity:1;
@@ -76,18 +76,58 @@
     float: left;
 }
 
-.elem_div_up
-{
+.cartelemdivright
+{ 
+  
+   float:right;
+   width:150px;
+   height:74px;
+   display:none;
 
-    background:red;
-     height:15px;
-     width:130px;
-     position:relative; 
+   margin-top:-22px;
+
+
 }
 
-.elem_div_down
+.cartelemdivright_up
 {
-    background: blue;
-     width:130px;
-     height:15px;
+  
+  height:39px;
+  width:142px;
+
 }
+
+
+.cartelemdivright_down
+{
+  
+  height:39px;
+  width:142px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

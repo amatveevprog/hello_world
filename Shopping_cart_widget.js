@@ -13,6 +13,27 @@ function cartinit()
 
 
 
+function showwidgetcontent()
+ {
+    var blocks = document.getElementsByClassName('cartelemdivright');
+    for (var i in blocks)
+      {       
+          blocks[i].style.display = 'inline';
+      }
+ }
+
+function hidewidgetcontent()
+ {
+    var blocks = document.getElementsByClassName('cartelemdivright');
+    for (var i in blocks)
+      {       
+          blocks[i].style.display= 'none';
+      }
+ }
+
+
+
+
 function Shopping_Cart()
 {
  
@@ -47,9 +68,9 @@ function Shopping_Cart()
             
             cart.addEventListener("mouseenter",function(event)
                   {
+                    //hidewidgetcontent();
                     
-                    
-                     var a = TweenLite.to(cart, 1.5,{width:'200px',onStart:showdiv});
+                     var a = TweenLite.to(cart, 1.5,{width:'200px',onStart:showdiv, onComplete:showwidgetcontent});
                      
                      
                     function showdiv()
@@ -62,13 +83,10 @@ function Shopping_Cart()
                            for (var i in blocks)
                             {       
                                   blocks[i].style.background = '#FF851B';
-                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'14px',paddingBottom:'6px'});
-                                  
-
+                                  var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'25px',paddingBottom:'16px'});
                             }
                             
-                            
-                
+                          
                       }  
                       
                       //ShowContent();
@@ -83,20 +101,18 @@ function Shopping_Cart()
                   
             cart.addEventListener("mouseleave",function(event)
                   {
-                   
-                       
-                     var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)'});
+                     var a2 =  TweenLite.to(cart_icon, 0.3, {transform:'rotate(0deg)',onStart:hideelems});
                     
                 
                      
-                        hideelems();
+                 
                      function hideelems()
                      {
                      var blocks = document.getElementsByClassName('cartelemdiv');
                           console.log(blocks);
                            for (var i in blocks)
                             {
-                               var a3 =  TweenLite.to(blocks[i], 0.3, {paddingBottom:'0px',paddingTop:'0px',onComplete:hidecart});
+                               var a3 =  TweenLite.to(blocks[i], 0.3, {paddingBottom:'0px',paddingTop:'0px',onStart:hidewidgetcontent, onComplete:hidecart});
 
                               blocks[i].style.background= '#FFDC00';
                               blocks[i].style.width = '0px';
@@ -141,9 +157,9 @@ function Shopping_Cart()
        console.log(goods);
        
        
-        var cart_elem_title = document.createElement("p");
-        cart_elem_title.innerHTML = item.name;
-        cart_elem_title.className = 'elemtext';
+       
+       var cart_elem_div = document.createElement("div");
+       cart_elem_div.className = 'cartelemdiv_general';
        
        
        
@@ -152,12 +168,38 @@ function Shopping_Cart()
        cart_elem_div.name = item.name;
        cart_elem_div.className = 'cartelemdiv';
        
+       
+       
+       
        var cart_elem_icon = document.createElement("img");
        cart_elem_icon.className = 'elemicon';
        cart_elem_icon.src = teaimagesrc;
        cart_elem_div.appendChild(cart_elem_icon);
        
+       
+       
+       
+       var cart_elem_div_right = document.createElement("div");
+       cart_elem_div_right.className = 'cartelemdivright';
+       
+       //CONTENT BLOCKS
+       var cart_elem_div_right_up = document.createElement("div");
+       cart_elem_div_right_up.className = 'cartelemdivright_up';
+       
+       
+       var cart_elem_div_right_down = document.createElement("div");
+       cart_elem_div_right_down.className = 'cartelemdivright_down';
+       
+       
+       
+       
+       
+       cart_elem_div_right.appendChild(cart_elem_div_right_up);
+       cart_elem_div_right.appendChild(cart_elem_div_right_down);
+       
+       cart_elem_div.appendChild(cart_elem_div_right);
        cart.appendChild(cart_elem_div);
+       
        
 
        //cart.appendChild(cart_elem_div1);
