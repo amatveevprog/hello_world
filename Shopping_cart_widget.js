@@ -42,11 +42,98 @@ function Shopping_Cart()
  
   
   var cart = document.createElement("div");
+  cart.id = 'cartdiv';
   cart.className = "cartdiv";
-  cart.id = 'cart';
+  //cart.id = 'cart';
   var imagesrc = 'https://cdn.shopify.com/s/files/1/0363/2857/t/68/assets/shopping_bag.png?1380437768496362973';
   var teaimagesrc = 'https://cdn1.iconfinder.com/data/icons/hotel-and-restaurant-volume-1/48/005-256.png';
   var goods = [];
+  
+  
+  
+  //DELETEITEM
+  function deleteitem(elem_id)
+    {
+       for(var i in goods)
+        {
+            if (goods[i].id == elem_id)
+            {
+               goods.splice(i, 1);
+               removefromwidget(elem_id);
+               
+            }
+        }
+    }
+  
+  function removefromwidget(elem_id)
+   {
+      //var cartelem =  document.getElementById('cartdiv');
+      var element =  document.getElementById('itemdivid'+elem_id);
+      element.innerHTML = '';
+      var tween =  TweenLite.to(element, 0.5, {opacity:0, height:'0px',onComplete:function(){cart.removeChild(element);}});
+     
+   }
+  
+  //Change_Quantity
+  function ChangeQTY(elem_id,plusminus)
+    {
+      console.log('start....');
+     
+      var number;
+       for(var i in goods)
+        {
+          if (goods[i].id == elem_id)
+            {
+              
+            
+              
+              console.log('found!!!!');
+              number = i;
+              if (plusminus == 'plus')
+               {
+                 goods[i].quantity = goods[i].quantity + 1;
+               }
+              else
+               {
+                goods[i].quantity = goods[i].quantity - 1;
+               }
+               
+                 
+            }
+        }
+        
+        if (number != null)
+         {
+           
+           if (goods[number].quantity == 0 )
+            {
+             goods[number].quantity = goods[number].quantity + 1;
+            }
+           else
+           {
+             console.log('start update');
+             updatequantitywidget(elem_id,number);
+           }
+         }
+         else
+         {
+           console.log('There is no such item in the system.');
+         }
+    }
+  
+  // Update_INFO_widget
+  function updatequantitywidget(elem_id,number)
+    {
+      console.log('!!!!!!!!!');
+      var elem_qty = document.getElementById('itemqtyid'+elem_id);
+      elem_qty.innerText = goods[number].quantity;
+    }
+  
+  
+  
+  
+  
+  
   this.show_cart = function()
     {
       if(document.body != null)
@@ -167,7 +254,7 @@ function Shopping_Cart()
        
        
        var cart_elem_div = document.createElement("div");
-       cart_elem_div.id = item.id;
+       cart_elem_div.id = 'itemdivid'+item.id;
        cart_elem_div.name = item.name;
        cart_elem_div.className = 'cartelemdiv';
        
@@ -202,10 +289,12 @@ function Shopping_Cart()
          var delete_item = document.createElement("button");
          delete_item.className = 'deleteitem';
          delete_item.innerText = 'x';
-          cart_elem_div_right_up.appendChild(delete_item);
+         delete_item.onclick = function(){ removefromwidget(item.id)};
+         cart_elem_div_right_up.appendChild(delete_item);
        
         var item_Number = document.createElement("p");
-        item_Number.innerHTML = ' 5 ';
+        item_Number.innerHTML = item.quantity;
+        item_Number.id = 'itemqtyid'+item.id;
         item_Number.className = 'carttitle';
         cart_elem_div_right_down.appendChild(item_Number);
         
@@ -215,11 +304,12 @@ function Shopping_Cart()
         var addbutton = document.createElement("button");
         addbutton.innerText = '+';
         addbutton.className = 'plusbutton';
+        addbutton.onclick = function(){ChangeQTY(item.id,'plus');}
        
         var minusbutton = document.createElement("button");
         minusbutton.innerText = '-';
         minusbutton.className = 'plusbutton';
-        
+        minusbutton.onclick = function(){ChangeQTY(item.id,'minus');}
         
         
         
@@ -237,6 +327,7 @@ function Shopping_Cart()
         
         var item_Price= document.createElement("p");
         item_Price.innerHTML = ' 676 RUB';
+        item_Price.id = 'item_priceid'+item.id;
         item_Price.className = 'carttitle';
         cart_elem_div_right_down.appendChild(item_Price);
        
@@ -292,9 +383,16 @@ var i =1;
 
 function additem()
  {
+   
+    var name =  document.getElementById('name').value;
+    var quantity =  document.getElementById('quantity').value;
+    var price =  document.getElementById('priceforone').value;
+    var type =  document.getElementById('type').value;
+    
     i = i+1;
     var item = new Object();
-    item.id = i+'a';
-    item.name = 'Чай Син Лин Хао Фен Ши  '+i;
+    item.id = i+name;
+    item.name = name;
+    item.quantity = quantity;
     cart.add_item(item);
  }
