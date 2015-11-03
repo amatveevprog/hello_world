@@ -91,11 +91,11 @@ function Shopping_Cart()
               number = i;
               if (plusminus == 'plus')
                {
-                 goods[i].quantity = goods[i].quantity + 1;
+                 goods[i].quantity = goods[i].quantity*1 + 1;
                }
               else
                {
-                goods[i].quantity = goods[i].quantity - 1;
+                goods[i].quantity = goods[i].quantity*1 - 1;
                }
                
                  
