@@ -1,6 +1,4 @@
 
-
-
 //document.onreadystatechange = cartinit();
 var cart;
  
@@ -128,7 +126,7 @@ function Shopping_Cart()
       var elem_qty = document.getElementById('itemqtyid'+elem_id);
       elem_qty.innerText = goods[number].quantity;
       var elem_price = document.getElementById('item_priceid'+elem_id);
-      elem_price.innerText = goods[number].quantity * goods[number].price +'RUB';
+      elem_price.innerText = goods[number].quantity * goods[number].price;
       
      
     }
@@ -331,7 +329,7 @@ function Shopping_Cart()
         
         var item_Price= document.createElement("p");
         var overall_price = item.price*item.quantity;
-        item_Price.innerHTML = overall_price + ' RUB';
+        item_Price.innerHTML = overall_price;
         item_Price.id = 'item_priceid'+item.id;
         item_Price.className = 'carttitle';
         cart_elem_div_right_down.appendChild(item_Price);
@@ -363,7 +361,6 @@ function Shopping_Cart()
 
 
 //Oncick Events
-
 
 
 

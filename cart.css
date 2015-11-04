@@ -2,14 +2,15 @@
 
 body
 {
-  background:#FFEE93;
+  background: url(http://cs628719.vk.me/v628719222/25edb/WOnjHpkgc2E.jpg) repeat;
+  filter: alpha(opacity=40);
 }
 
 
 
 .cartdiv
  {   scrollbar-track-color:yellow;
-     background-image: url(http://cs623223.vk.me/v623223802/46a60/B-klt2Ocxyo.jpg);
+     background: #247e80;
      position:absolute;
      top:0;
      bottom:0;
@@ -48,22 +49,25 @@ body
   .cartelemdiv
   {
      color: #171123;
+     opacity:0.9;
      border-radius:2px;
      width:1px;
      height:40px;
      margin-top:5px;
      padding-left:5px;
      padding-bottom:3px;
-     background:#648381; /* Параметры тени */
+     background:#EEF5DB;
+     box-shadow: 2px 2px 1px #2e3939;
   }
   
   
   .cartelemdiv:hover
   {
  
-    background:#88D498;
+    opacity:1;
     border:5px;
-    transition: 0.8s ease;
+    margin-left:6px;
+    transition: 0.4s ease;
     
 
 
