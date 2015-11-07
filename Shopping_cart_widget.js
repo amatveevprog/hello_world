@@ -16,7 +16,14 @@ function showwidgetcontent()
     var blocks = document.getElementsByClassName('cartelemdivright');
     for (var i in blocks)
       {       
+        try
+        {
           var tween = TweenLite.to(blocks[i], 0.5,{opacity:1, display:'inline'});
+        }
+            catch(e)
+        {
+          console.log(e);
+        }
           //blocks[i].style.display = 'inline';
       }
  }
@@ -27,8 +34,15 @@ function hidewidgetcontent()
     
     for (var i in blocks)
       {   
+        try
+        {
           var tween = TweenLite.to(blocks[i], 0.2,{opacity:0,display:'none'});
           //blocks[i].style.display= 'none';
+        }
+        catch(e)
+        {
+          console.log(e);
+        }
       }
  }
 
@@ -174,8 +188,15 @@ function Shopping_Cart()
                           
                            for (var i in blocks)
                             {       
+                                  try
+                                  {
                                   blocks[i].style.background = '#EEF5DB';
                                   var c = TweenLite.to(blocks[i], 0.5, {width: '200px',paddingTop:'25px',paddingBottom:'13px'});
+                                  }
+                                    catch(e)
+                                         {
+                                           console.log(e);
+                                         }
                             }
                             
                           
@@ -204,11 +225,16 @@ function Shopping_Cart()
                           console.log(blocks);
                            for (var i in blocks)
                             { 
+                              try
+                              {
                                var a3 =  TweenLite.to(blocks[i], 0.3, {paddingBottom:'0px',paddingTop:'0px',background:'#EEF5DB',onStart:hidewidgetcontent,width:'0px', onComplete:hidecart});
-
+                              }
                               //blocks[i].style.background= '#FFDC00';
                              // blocks[i].style.width = '0px';
-  
+                            catch(e)
+                               {
+                                    console.log(e);
+                               }
                             }
                      }
                      
