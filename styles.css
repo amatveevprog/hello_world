@@ -379,7 +379,14 @@
     padding-right:10%;
 
  }
-
+.teabar-circle-wrapper
+{
+	width:300px;
+	height:360px;
+	//background-color:red;
+	display:inline-block;
+	margin:25px;
+}
 .teabar-circle
  {
 
@@ -387,9 +394,8 @@
     //background: #f0f0f0; 
     display: inline-block;
     border-radius:999px;
-    height:320px
+    height:320px;
     float: left;
-    margin:10px;
  }
 
 .teabar-circle-img
